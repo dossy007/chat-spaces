@@ -23,4 +23,12 @@ Things you may want to cover:
 
 * ...
 
-||
+## Users table
+|Column|Type|Option|
+|------|----|------|
+|name|string|index:true,null:false|
+
+## Assosiation
+- has_many :members
+- has_many :messages
+- has_many :groups, through: :members
