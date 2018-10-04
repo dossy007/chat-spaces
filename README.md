@@ -28,6 +28,7 @@ Things you may want to cover:
 |------|----|------|
 |name|string|index: true,null: false|
 
+
 ## Assosiation
 - has_many :members
 - has_many :messages
