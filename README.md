@@ -56,7 +56,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## members tabel
+## members table
 |Column|Type|Option|
 |------|----|------|
 |group_id|references|foreign_key :true
