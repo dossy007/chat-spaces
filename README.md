@@ -23,14 +23,46 @@ Things you may want to cover:
 
 * ...
 
-## Users table
+## users table
 |Column|Type|Option|
 |------|----|------|
-|name|string|index:true,null:false|
+|name|string|index: true,null: false|
+
 
 ## Assosiation
 - has_many :members
 - has_many :messages
 - has_many :groups, through: :members
 
+## groups table
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false, unique: true|
 
+## Assosiation
+- has_many :members
+- has_many :messages
+- has_many :users, through: :members
+
+
+## messages table
+|Column|Type|Option|
+|------|----|------|
+|text|text||
+|image|string||
+|user_id|references|foreign_key: true|
+|group_id|references|foreign_key: true|
+
+## Assosiation
+- belongs_to :user
+- belongs_to :group
+
+## members table
+|Column|Type|Option|
+|------|----|------|
+|group_id|references|foreign_key :true
+|user_id|references|foreign_key :true|
+
+## Assosiation
+- belongs_to user
+- belongs_to :group
