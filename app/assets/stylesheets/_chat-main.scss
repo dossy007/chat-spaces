@@ -1,8 +1,12 @@
 .chat-main {
-	float:left;
-	width:70%;
-  .chat-main__header {
+  float: left;
+  width: 70%;
+  height: calc(100vh);
 
+  .chat-main__header {
+  	height: 15%;
+    .chat-main__header--group {
+    }
   }
   .chat-main__body {
   	background-color: red;
