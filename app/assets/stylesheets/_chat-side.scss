@@ -4,8 +4,11 @@
     height: calc(100vh);
 }
   .chat-side__user {
+    height:15%;
     background-color: #253141;  //変数がうまく反映されない！！
+    color: white;
   }
   .chat-side__group {
+    height: 85%;
     background-color: #2f3e51;
   }
