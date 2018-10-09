@@ -1,5 +1,10 @@
-.chat {
-  width:100%;
   .chat-side {
+  	width:30%;
+  	height:20%;
   }
-}
+    .chat-side__user {
+  	  background-color: $userback;
+    }
+    .chat-side__group {
+      background-color: #2f3e51;
+    }
