@@ -1,5 +1,5 @@
 .chat-side {
-	width:30%;
+	width:20%;
 	float:left;
     height: calc(100vh);
 }
@@ -8,18 +8,22 @@
     background-color: #253141;  //変数がうまく反映されない！！
     color: white;
     padding: 0 20px 0 20px;
-
-    .chat-side__user-contents {
-    }
     .chat-side__user--name {
       font-size: 22px;
+      padding-top: 40px;
+    }
+    .chat-side__user--contents {
+      position: relative;
+      padding-left: 200px;
+      top: -2em;
+	  .edit-icon {
+	  }
     }
   }
   .chat-side__group {
     height: 85%;
     background-color: #2f3e51;
     padding: 0 20px 0 20px;
-
     .chat-side__group--list {
     	padding: 20px 0 40px;
     	color: #FFFFFF;
