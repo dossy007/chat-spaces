@@ -3,14 +3,22 @@
   width: 70%;
   height: calc(100vh);
 
-  .chat-main__header {
+  &__header {
   	height: 15%;
+    padding: 0 40px 0 40px;
     .chat-main__header--group {
+      font-size: 20px;
+      font-color: #333333;
+      padding: 35px 0 15px;
+    }
+    .chat-main__header--group-user {
+      font-size: 12px;
+      font-color: #999999;
     }
   }
-  .chat-main__body {
+  &__body {
+    padding: 0 40px 0 40px;
   	background-color: red;
-
   }
   .chat-main__footer {
 
