@@ -1,8 +1,10 @@
 %div.chat
   %div.chat-side
     %div.chat-side__user
-      %div.chat-side__user--contents font-aweosome用
       %div.chat-side__user--name name
+      %div.chat-side__user--contents
+        = fa_icon 'edit', class: 'edit-icon'
+        = fa_icon 'cog', class: 'cog-icon'
     %div.chat-side__group
       = render 'chat-side__group--list'
   %div.chat-main
