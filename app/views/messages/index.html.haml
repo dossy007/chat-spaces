@@ -9,10 +9,11 @@
       = render 'chat-side__group--list'
   %div.chat-main
     %div.chat-main__header
-      %div.chat-main__header--group group名
+      %div.chat-main__header--group Group名
       %div.chat-main__header--group-user groupメンバー
     %div.chat-main__body
-      = render 'chat-main__body--message-list'
+      %div.chat-main__body--message
+        = render 'chat-main__body--message'
     %div.chat-main__footer
       %div.chat-main__footer--form 投稿する
       %div.chat-main__footer--form-img img
