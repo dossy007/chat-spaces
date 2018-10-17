@@ -45,13 +45,13 @@
     width: 80%;
     position: absolute;
     bottom: 0;
-    height: 12.5%;
-    .chat-main__footer--form {
-      padding: 20px 40px 20px 40px;
-      background-color: gray;
-      input {
-        height:50px;
+    padding: 20px 40px 20px 40px;
+    background-color: gray;
+      .input_text {
+        height: 50px;
       }
-    }
+      .submit {
+        
+      }
   }
 }
