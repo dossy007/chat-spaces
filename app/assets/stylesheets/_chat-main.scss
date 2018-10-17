@@ -36,12 +36,20 @@
         .chat-main__body--message-date {
         }
         .chat-main__body--message-text {
+          font-size: 14px;
           padding-top: 10px;
           padding-bottom: 40px;
         }
       }
   }
   .chat-main__footer {
-
+    position: absolute;
+    bottom: 0;
+    height: 10%;
+    .chat-main__footer--form {
+      input {
+        height:50px;
+      }
+    }
   }
 }
