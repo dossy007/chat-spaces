@@ -2,7 +2,6 @@
   float: left;
   width: 70%;
   height: calc(100vh);
-
   &__header {
   	height: 15%;
     padding: 0 40px 0 40px;
@@ -43,10 +42,13 @@
       }
   }
   .chat-main__footer {
+    width: 80%;
     position: absolute;
     bottom: 0;
-    height: 10%;
+    height: 12.5%;
     .chat-main__footer--form {
+      padding: 20px 40px 20px 40px;
+      background-color: gray;
       input {
         height:50px;
       }
