@@ -19,13 +19,25 @@
   .chat-main__body {
     padding: 0 40px 0 40px;
       .chat-main__body--message {
+        padding-top: 46px;
+        .clearfix:after {
+          display: block;
+          clear: both;
+          height: 0px;
+          visibility: hidden;
+          content: "";
+        }
         .chat-main__body--message-name {
           font-size: 16px;
+          padding-right: 10px;
+          font-weight: bold;
+          float: left;
         }
         .chat-main__body--message-date {
-
         }
         .chat-main__body--message-text {
+          padding-top: 10px;
+          padding-bottom: 40px;
         }
       }
   }
