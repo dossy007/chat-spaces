@@ -42,19 +42,24 @@
       }
   }
   .chat-main__footer {
-    width: 80%;
+    width: 75%;
     position: absolute;
     bottom: 0;
     padding: 20px 40px 20px 40px;
     background-color: gray;
       .input_text {
         height: 50px;
+        width: 85%;
       }
       .submit {
+        position: relative;
         background-color: #38AEF0;
         height: 50px;
+        width: 90px;
         color: white;
-        border: 1px solid #38AEF0
+        border: 1px solid #38AEF0;
+        left: 2em;
       }
+      
   }
 }
