@@ -15,5 +15,10 @@
       %div.chat-main__body--message
         = render 'chat-main__body--message'
     %div.chat-main__footer
-      %div.chat-main__footer--form 投稿する
-      %div.chat-main__footer--form-img img
+      %div.chat-main__footer--form
+        %form{action: "", method: "post", name: "search"}
+          %input{name: "search",placeholder: "type a message",size:"70"}
+          %label
+            = link_to do
+              = fa_icon 'image', class: 'img_icon'
+          %input{type: "submit"}
