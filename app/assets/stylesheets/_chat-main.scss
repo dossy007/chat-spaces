@@ -1,0 +1,83 @@
+.chat-main {
+  float: left;
+  width: 70%;
+  height: calc(100vh);
+  &__header {
+  	height: 15%;
+    width:107%;
+    padding: 0 40px 0 40px;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    .chat-main__header--group {
+      font-size: 20px;
+      font-color: #333333;
+      padding: 35px 0 15px;
+    }
+    .chat-main__header--group-user {
+      font-size: 12px;
+      font-color: #999999;
+    }
+    .chat-main__header--group-edit {
+      width: 70px;
+      height: 40px;
+      position: relative;
+      bottom: 4em;
+      left: 60em;
+      text-align: center;
+      border: 1px solid #38AEF0;
+      padding-top: 10px;
+      color: #38AEF0;
+    }
+  }
+  .chat-main__body {
+    padding: 0 40px 0 40px;
+      .chat-main__body--message {
+        padding-top: 46px;
+        .clearfix:after {
+          display: block;
+          clear: both;
+          height: 0px;
+          visibility: hidden;
+          content: "";
+        }
+        .chat-main__body--message-name {
+          font-size: 16px;
+          padding-right: 10px;
+          font-weight: bold;
+          float: left;
+        }
+        .chat-main__body--message-date {
+        }
+        .chat-main__body--message-text {
+          font-size: 14px;
+          padding-top: 10px;
+          padding-bottom: 40px;
+        }
+      }
+  }
+  .chat-main__footer {
+    width: 75%;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 40px 20px 40px;
+    background-color: gray;
+      .input_text {
+        height: 50px;
+        width: 85%;
+      }
+      .submit {
+        position: relative;
+        background-color: #38AEF0;
+        height: 50px;
+        width: 90px;
+        color: white;
+        border: 1px solid #38AEF0;
+        left: 2em;
+      }
+      .img_icon {
+        position: relative;
+        left: 1em;
+        color: black;
+      }
+  }
+}

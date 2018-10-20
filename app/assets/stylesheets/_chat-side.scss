@@ -1,0 +1,39 @@
+.chat-side {
+	width:20%;
+	float:left;
+    height: calc(100vh);
+}
+  .chat-side__user {
+    height:15%;
+    background-color: #253141;  //変数がうまく反映されない！！
+    color: white;
+    padding: 0 20px 0 20px;
+    .chat-side__user--name {
+      font-size: 22px;
+      padding-top: 40px;
+    }
+    .chat-side__user--contents {
+      position: relative;
+      padding-left: 200px;
+      top: -2em;
+	  .edit-icon {
+	  	//今はいらんけど、後々いじるかもしれない
+	  }
+    }
+  }
+  .chat-side__group {
+    height: 85%;
+    background-color: #2f3e51;
+    padding: 0 20px 0 20px;
+    .chat-side__group--list {
+    	padding: 20px 0 40px;
+    	color: #FFFFFF;
+      .chat-side__group--list-name {
+      	font-size: 15px;
+      }
+      .chat-side__group--list-message {
+      	padding-top: 5px;
+      	font-size: 11px;
+      }
+    }
+  }

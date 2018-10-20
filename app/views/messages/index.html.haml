@@ -1,0 +1,24 @@
+%div.chat
+  %div.chat-side
+    %div.chat-side__user
+      %div.chat-side__user--name name
+      %div.chat-side__user--contents
+        = fa_icon 'edit', class: 'edit-icon'
+        = fa_icon 'cog', class: 'cog-icon'
+    %div.chat-side__group
+      = render 'chat-side__group--list'
+  %div.chat-main
+    %div.chat-main__header
+      %div.chat-main__header--group Group名
+      %div.chat-main__header--group-user groupメンバー
+      %div.chat-main__header--group-edit edit
+    %div.chat-main__body
+      %div.chat-main__body--message
+        = render 'chat-main__body--message'
+    %div.chat-main__footer
+      %form{action: "", method: "post", name: "search"}
+        %input{name: "search",placeholder: "type a message",class: 'input_text'}
+        %label
+          = link_to do
+            = fa_icon 'image', class: 'img_icon'
+        %input{type: "submit",class: 'submit'}
