@@ -4,7 +4,10 @@
   height: calc(100vh);
   &__header {
   	height: 15%;
+    width:107%;
     padding: 0 40px 0 40px;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
     .chat-main__header--group {
       font-size: 20px;
       font-color: #333333;
@@ -15,7 +18,14 @@
       font-color: #999999;
     }
     .chat-main__header--group-edit {
-      
+      width: 70px;
+      height: 40px;
+      position: relative;
+      bottom: 3.5em;
+      left: 60em;
+      text-align: center;
+      border: 1px solid #38AEF0;
+      padding-top: 10px;
     }
   }
   .chat-main__body {
