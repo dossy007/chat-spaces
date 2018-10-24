@@ -6,11 +6,11 @@
   	height: 15%;
     width:107%;
     padding: 0 40px 0 40px;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
+    border-bottom: 1px solid $gray;
+    border-right: 1px solid $gray;
     .chat-main__header--group {
       font-size: 20px;
-      font-color: #333333;
+      font-color: $black;
       padding: 35px 0 15px;
     }
     .chat-main__header--group-user {
@@ -24,7 +24,7 @@
       bottom: 4em;
       left: 60em;
       text-align: center;
-      border: 1px solid #38AEF0;
+      border: 1px solid $blueback;
       padding-top: 10px;
       color: $blueback;
     }
@@ -67,11 +67,11 @@
       }
       .submit {
         position: relative;
-        background-color: #38AEF0;
+        background-color: $light_blue;
         height: 50px;
         width: 90px;
         color: white;
-        border: 1px solid #38AEF0;
+        border: 1px solid $light_blue;
         left: 2em;
       }
       .img_icon {
