@@ -16,9 +16,13 @@
       position: relative;
       padding-left: 200px;
       top: -2em;
-	  .edit-icon {
-	  	//今はいらんけど、後々いじるかもしれない
-	  }
+  	  .edit-icon {
+        color: white;
+  	  	//今はいらんけど、後々いじるかもしれない
+  	  }
+      .cog-icon {
+        color: white;
+      }
     }
   }
   .chat-side__group {
@@ -27,7 +31,7 @@
     padding: 0 20px 0 20px;
     .chat-side__group--list {
     	padding: 20px 0 40px;
-    	color: #FFFFFF;
+    	color: $white;
       .chat-side__group--list-name {
       	font-size: 15px;
       }
