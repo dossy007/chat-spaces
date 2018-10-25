@@ -1,6 +1,9 @@
 @import "./reset";
 @import "font-awesome";
+@import "./vali";
+@import "./flash";
 @import "./chat";
 @import "./chat-side";
 @import "./chat-main";
-@import "./valiables";
+@import "./user";
+// 上から読み込まれているので、変数は先に読まんと行かん
