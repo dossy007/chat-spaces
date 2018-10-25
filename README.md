@@ -60,8 +60,8 @@ Things you may want to cover:
 ## members table
 |Column|Type|Option|
 |------|----|------|
-|group_id|references|foreign_key :true
-|user_id|references|foreign_key :true|
+|group_id|references|foreign_key: true
+|user_id|references|foreign_key: true|
 <!-- 確か、references（外部キー制約)を使う時、_idはいらんかった記憶がある。 -->
 ## Assosiation
 - belongs_to user
