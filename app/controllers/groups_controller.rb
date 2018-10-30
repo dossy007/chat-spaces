@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-	before_action :set_params, only: [:edit, :update]
+  before_action :set_params, only: [:edit, :update]
   def index
   end
 
@@ -25,6 +25,7 @@ class GroupsController < ApplicationController
   		redirect_to group_messages_path(@group), notice: 'グループを編集しました'
   	else
   		render :edit
+  	end
   end
 
   private
