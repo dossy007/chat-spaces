@@ -31,13 +31,15 @@
     padding: 0 20px 0 20px;
     .chat-side__group--list {
     	padding: 20px 0 40px;
-    	color: $white;
+      // color: $white;  ここに（親要素に）colorを適用してもなぜ変わらないのか？？？
       .chat-side__group--list-name {
       	font-size: 15px;
+        color: $white;
       }
       .chat-side__group--list-message {
       	padding-top: 5px;
       	font-size: 11px;
+        color: $white;
       }
     }
   }
