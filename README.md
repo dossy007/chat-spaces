@@ -57,6 +57,10 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
+## validation
+- :content, presence: true, unless: :image?
+
+
 ## members table
 |Column|Type|Option|
 |------|----|------|
