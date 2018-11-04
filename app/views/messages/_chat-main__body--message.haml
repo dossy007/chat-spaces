@@ -1,5 +1,10 @@
-%ul
-  %li.chat-main__body--message-name namenamenamenamanamename
-  %li.chat-main__body--message-date 2018/10/10
-  %li.chat-main__body--message-text texttexttexttttttttttttttttttttttttt
-//名前、日時、textが必要でです。
+- messages.each do |message|
+  %ul
+    %li.chat-main__body--message-name
+      = message.user.name
+    %li.chat-main__body--message-date
+      = message.created_at.strftime('%Y年%m月%d日 %H:%M:%S')
+    %li.chat-main__body--message-text
+      - if message.text.present?
+        = message.text
+      = image_tag message.image.url, class: 'lower' if message.image.present?
