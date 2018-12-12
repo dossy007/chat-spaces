@@ -1,2 +1,22 @@
-.wrapper
+%div.chat
   = render 'shared/chat-side'
+  %div.chat-main
+    %div.chat-main__header
+      %div.chat-main__header--group Group名
+      %div.chat-main__header--group-user groupメンバー
+      = link_to edit_user_path(current_user) do
+        %div.chat-main__header--group-edit{:style => "text-decoration: none;"} edit
+        / text-decorationがうまく適応されないお！
+    %div.chat-main__body
+      %div.chat-main__body--message
+        %ul
+          %li.chat-main__body--message-name name記入欄
+          %li.chat-main__body--message-date 2018/01/01
+          %li.chat-main__body--message-text text表示欄
+    %div.chat-main__footer
+      %form{action: "", method: "post", name: "search"}
+        %input{name: "search",placeholder: "type a message",class: 'input_text'}
+        %label
+          = link_to do
+            = fa_icon 'image', class: 'img_icon'
+        %input{type: "submit",class: 'submit'}
