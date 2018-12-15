@@ -31,7 +31,7 @@
         %div.chat-main__body--message
           = render 'chat-main__body--message', messages: @messages
     %div.chat-main__footer
-      = form_for [@group, @message],html: {id: :new_comment} do |f|
+      = form_for [@group, @message] do |f|
         = f.text_field :text, class: 'input_text', placeholder: 'type a message'
         / %input{name: "search",placeholder: "type a message",class: 'input_text'}
         = f.label :image do
