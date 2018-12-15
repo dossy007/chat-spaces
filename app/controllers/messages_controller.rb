@@ -11,21 +11,17 @@ class MessagesController < ApplicationController
 
 	def create
 		@message = @group.messages.new(message_params)
-		if @message.save
-			redirect_to group_messages_path(@group), notice: 'messageが送信'
-			# redirect_toの第二引数にnoticeのキーを取れる flash[:notice]と同義
-			respond_to do |format|
-				# format.json {
-				# 	render json
-				# }
-				format.html { group_messages_path(@group) }
-			    format.json
+		respond_to do |format|
+			if @message.save
+				# redirect_toの第二引数にnoticeのキーを取れる flash[:notice]と同義
+				format.html { redirect_to group_messages_path(@group), notice: 'messageが送信されました' }
+				format.json
+			else
+				@messages = @group.messages.includes(:user)
+				flash.now[:alert] = 'messagesを入力してください'
+				render :index
 			end
-		else
-			@messages = @group.messages.includes(:user)
-			flash.now[:alert] = 'messagesを入力してください'
-			render :index
-		end
+	    end
 	end
 
 	def delete
