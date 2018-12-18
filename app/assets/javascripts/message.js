@@ -52,11 +52,11 @@ $(function() {
 		.done(function(data) {
 			console.log(url);
 			var html = buildHTML(data);
-			$('.chat-main__body--message').append(html);
+			// $('.chat-main__body--message').append(html);
 			console.log(html);
-			// animate
 			$('.chat-main__body').animate({scrollTop: 0}, 500,'swing' )
 		})
+
 		.fail(function() {
 			alert('error')
 		})
