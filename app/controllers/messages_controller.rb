@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 			if @message.save
 				# redirect_toの第二引数にnoticeのキーを取れる flash[:notice]と同義
 				# format.html { redirect_to group_messages_path(@group), notice: 'messageが送信されました' }
-				format.json
+				format.json{ render json: @message}
 			else
 				@messages = @group.messages.includes(:user)
 				flash.now[:alert] = 'messagesを入力してください'
