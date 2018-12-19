@@ -57,7 +57,7 @@ $(function() {
       </li>
       <li class="chat-main__body--message-text">
 	        ${message.text}
-	        <img src= "${public/message.image_url}">
+	        <img src= "${message.image_url}">
       </li>
     </ul>`
 		return html;
