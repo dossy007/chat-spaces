@@ -76,9 +76,11 @@ $(function() {
 		    contentType: false
 		})
 		.done(function(data) {
-			console.log(html);
 			var html = buildHTML(data);
 			$('.chat-main__body--message').append(html);
+			// $('.chat-main__body').animate({scrollTop: $('.chat-main__body').height()},1500);
+			//submitすると、スクロールする処理。
+			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
 		})
 
 		.fail(function() {
