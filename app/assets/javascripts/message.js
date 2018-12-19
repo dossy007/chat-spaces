@@ -52,23 +52,13 @@ $(function() {
 	var html = `
     <ul>
       <li class="chat-main__body--message-name">
-        <%= message.user.name %>
         ${message.user_name}
       </li>
       <li class="chat-main__body--message-date">
         ${message.created_at}
       </li>
       <li class="chat-main__body--message-text">
-	      if message.text.present?
 	        ${message.text}
-	      else
-	        <%= image.tag message.image.url, class="lower" if message.image.present? %>
-	    ${message.user_id}
-	    ${message.id}
-	      end
-	    }
-	    }
-	    }
       </li>
     </ul>`
 		return html;
@@ -89,8 +79,6 @@ $(function() {
 			console.log(html);
 			var html = buildHTML(data);
 			$('.chat-main__body--message').append(html);
-			console.log(html);
-			
 		})
 
 		.fail(function() {
