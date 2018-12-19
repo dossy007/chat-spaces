@@ -47,8 +47,6 @@ $(function() {
 	//       = message.text
 	//     = image_tag message.image.url, class: 'lower' if message.image.present?`
 
-	// var user_name = message.user.name
-	// userの情報が引っ張ってこれない。
 	var html = `
     <ul>
       <li class="chat-main__body--message-name">
@@ -59,6 +57,7 @@ $(function() {
       </li>
       <li class="chat-main__body--message-text">
 	        ${message.text}
+	        <img src= "${public/message.image_url}">
       </li>
     </ul>`
 		return html;
@@ -81,6 +80,9 @@ $(function() {
 			// $('.chat-main__body').animate({scrollTop: $('.chat-main__body').height()},1500);
 			//submitすると、スクロールする処理。
 			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
+			console.log(data.image_url)
+			console.log(data)
+			// attr
 		})
 
 		.fail(function() {
