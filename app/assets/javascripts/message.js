@@ -46,6 +46,7 @@ $(function() {
 	//     - if message.text.present?
 	//       = message.text
 	//     = image_tag message.image.url, class: 'lower' if message.image.present?`
+	var set_image = message.image_url ? `<img src= "${message.image_url}">` : '' ;
 
 	var html = `
     <ul>
@@ -57,7 +58,7 @@ $(function() {
       </li>
       <li class="chat-main__body--message-text">
 	        ${message.text}
-	        <img src= "${message.image_url}">
+	        ${set_image}
       </li>
     </ul>`
 		return html;
@@ -68,7 +69,7 @@ $(function() {
 		var url = $(this).attr('action');
 		$.ajax( {
 			url: url,
-			type: 'POST',//"POST"?
+			type: 'POST',
 		    data: formData,
 		    datatype: 'json',
 		    processData: false,
@@ -80,9 +81,7 @@ $(function() {
 			// $('.chat-main__body').animate({scrollTop: $('.chat-main__body').height()},1500);
 			//submitすると、スクロールする処理。
 			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
-			console.log(data.image_url)
-			console.log(data)
-			// attr
+			$('.submit').prop("disabled", false);
 		})
 
 		.fail(function() {
