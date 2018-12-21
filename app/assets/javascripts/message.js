@@ -1,5 +1,6 @@
 $(function() {
 	function buildHTML(message) {
+
 	var set_image = message.image_url ? `<img src= "${message.image_url}">` : '' ;
 
 	var html = `
@@ -17,6 +18,7 @@ $(function() {
     </ul>`
 		return html;
 	};
+
 	$('#new_message').on('submit',function(e) {
 		e.preventDefault();
 		var formData = new FormData(this);
@@ -29,6 +31,7 @@ $(function() {
 		    processData: false,
 		    contentType: false
 		})
+
 		.done(function(data) {
 			var html = buildHTML(data);
 			$('.chat-main__body--message').append(html);
