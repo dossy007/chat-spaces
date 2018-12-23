@@ -1,7 +1,7 @@
 $(function() {
 	function buildHTML(message) {
 
-	var set_image = message.image_url ? `<img src= "${message.image_url}">` : '' ;
+	var set_image = message.image_url ? `<img src= "${message.image_url}">` : null ;
 
 	var html = `
     <ul>
