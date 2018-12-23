@@ -25,16 +25,13 @@
           = member.user.name
       = link_to edit_user_path(current_user) do
         %div.chat-main__header--group-edit{:style => "text-decoration: none;"} edit
-        / text-decorationがうまく適応されないお！
     %div.chat-main__body{style: "overflow:scroll"}
       #chat-main__body--scroll
         %div.chat-main__body--message
           = render 'chat-main__body--message', messages: @messages
-          /id body-scrollはいつなんの為に追加されたのか？？
     %div.chat-main__footer
       = form_for [@group, @message] do |f|
         = f.text_field :text, class: 'input_text', placeholder: 'type a message'
-        / %input{name: "search",placeholder: "type a message",class: 'input_text'}
         = f.label :image do
           = fa_icon 'image', class: 'img_icon'
           = f.file_field :image, style: 'display:none'
