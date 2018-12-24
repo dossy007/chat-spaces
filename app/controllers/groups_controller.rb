@@ -6,6 +6,10 @@ class GroupsController < ApplicationController
   def new
   	@group = Group.new
   	@group.users << current_user
+    respond to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
