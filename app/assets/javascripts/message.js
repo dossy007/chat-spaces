@@ -1,7 +1,7 @@
 $(function() {
 	function buildHTML(message) {
-
-	var set_image = message.image_url ? `<img src= "${message.image_url}">` : null ;
+	var set_image = message.image_url ? `<li class="chat-main__body--message-text"> ${message.text}
+	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`
 
 	var html = `
     <ul>
@@ -11,8 +11,6 @@ $(function() {
       <li class="chat-main__body--message-date">
         ${message.created_at}
       </li>
-      <li class="chat-main__body--message-text">
-	        ${message.text}
 	        ${set_image}
       </li>
     </ul>`
@@ -36,11 +34,14 @@ $(function() {
 			var html = buildHTML(data);
 			$('.chat-main__body--message').append(html);
 			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
-			$('.submit').prop("disabled", false);
 		})
 
 		.fail(function() {
 			alert('error')
+		})
+		.always(function(data) {
+			$('.submit').prop("disabled", false);
+
 		})
 	})
 });
