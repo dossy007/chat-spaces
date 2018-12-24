@@ -42,6 +42,6 @@ $(function() {
 		.always(function(data) {
 			$('.submit').prop("disabled", false);
 
-		})
+		});
 	})
 });
