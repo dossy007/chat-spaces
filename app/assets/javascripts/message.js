@@ -9,7 +9,7 @@ $(function() {
         ${message.user_name}
       </li>
       <li class="chat-main__body--message-date">
-        ${message.created_at}
+        ${message.date}
       </li>
 	        ${set_image}
       </li>
