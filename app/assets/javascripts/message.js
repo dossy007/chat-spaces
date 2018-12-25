@@ -1,6 +1,6 @@
 $(function() {
 	function buildHTML(message) {
-	var set_image = message.image_url ? `<li class="chat-main__body--message-text"> ${message.text}
+	var insert_content = message.image_url ? `<li class="chat-main__body--message-text"> ${message.text}
 	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`
 
 	var html = `
@@ -11,7 +11,7 @@ $(function() {
       <li class="chat-main__body--message-date">
         ${message.date}
       </li>
-	        ${set_image}
+	        ${insert_content}
       </li>
     </ul>`
 		return html;
