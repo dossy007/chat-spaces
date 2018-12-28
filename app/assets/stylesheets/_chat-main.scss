@@ -1,7 +1,7 @@
 .chat-main {
   float: left;
+  height: 100%;
   width: 70%;
-  height: calc(100vh);
   &__header {
   	height: 15%;
     width:107%;
@@ -30,6 +30,7 @@
     }
   }
   .chat-main__body {
+    height: 75%;
     padding: 0 40px 0 40px;
       .chat-main__body--message {
         padding-top: 46px;
@@ -57,6 +58,7 @@
   }
   .chat-main__footer {
     width: 75%;
+    height: 7%;
     position: absolute;
     bottom: 0;
     padding: 20px 40px 20px 40px;
