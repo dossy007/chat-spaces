@@ -9,6 +9,9 @@ $(function) { //大枠
 					</div>`
 	};
 
-	
+	function appendNoUsers(user) { //htmlをなくす処理
+		var html =`<div class='chat-group-form__field--right'>
+		           </div>`
+	}
 	$(".chat-group-form__input").on("keyup")
 }
