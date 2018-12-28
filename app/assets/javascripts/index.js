@@ -13,8 +13,8 @@ $(function() {
 		var html =`<div class='chat-group-form__field--right'>
 		           </div>`
 	}
-	$(".chat-group-form__search").on("keyup", function() {
-		var input = $(".chat-group-form__search").val();
+	$("#user-search-field").on("keyup", function() {
+		var input = $("#user-search-field").val();
 		console.log(input)
 	})
 })
