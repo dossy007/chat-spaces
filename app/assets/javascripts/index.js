@@ -1,4 +1,4 @@
-$(function) { //大枠
+$(function() {
 
 	function appendUsers(user) { //htmlを加える処理
 		var html = `<div class='chat-group-form__field--right'>
@@ -13,5 +13,8 @@ $(function) { //大枠
 		var html =`<div class='chat-group-form__field--right'>
 		           </div>`
 	}
-	$(".chat-group-form__input").on("keyup")
-}
+	$(".chat-group-form__search").on("keyup", function() {
+		var input = $(".chat-group-form__search").val();
+		console.log(input)
+	})
+})
