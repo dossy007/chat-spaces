@@ -1,27 +1,43 @@
 $(function() {
+	var user_list = $("#user_search_result")
 
 	function appendUsers(user) { //htmlを加える処理
-		var html = `<div class='chat-group-form__field--right'>
-					  <div class='chat-group-form__search clearfix'>
-					    <input class='chat-group-form__input' id='user-search-field' placeholder='追加したいユーザー名を入力してください' type='text'>
-					  </div>
-					  <div id='user-search-result'></div>
-					</div>`
-	};
+		var html = `<div class="chat-group-user clearfix">
+		              <p class="chat-group-user__name">${user.name}</p>
+                      <a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加
+                      </a>
+		            </div>`
+		user_list.append(html);
+	}
 
 	function appendNoUsers(user) { //htmlをなくす処理
 		var html =`<div class='chat-group-form__field--right'>
 		           </div>`
+		           $(".user-search-result").append(html);
 	}
 	$("#user-search-field").on("keyup", function() {
 		var input = $("#user-search-field").val();
-		console.log(input);
-
 		$.ajax( {
 			type: 'GET',
 			url: '/users',
 			data: {keyword: input},
-			dataType: 'json'
+			dataType: 'json',
+			processData: false,
+		    contentType: false
 		})
+		.done(function(users) {
+			$(".user-search-result").empty();
+			if (users.length !== 0) {
+				users.forEach(function(user) {
+					appendUsers(user);
+					console.log(user)
+				});
+		    }else {
+		    	console.log('できてへん')
+		    }
+		})
+		.fail(function(){
+		alert('取得失敗')
+	    })
 	})
 })
