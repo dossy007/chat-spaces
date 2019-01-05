@@ -22,7 +22,6 @@ $(function() {
 			url: '/users',
 			data: {keyword: input},
 			dataType: 'json',
-			processData: false,
 		    contentType: false
 		})
 		.done(function(users) {
