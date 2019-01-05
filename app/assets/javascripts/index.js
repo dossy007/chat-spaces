@@ -38,8 +38,5 @@ $(function() {
 		.fail(function(){
 		alert('通信失敗')
 	    })
-	 //    .always(function() {
-		// user_list.empty();
-	 //    })
 	})
 })
