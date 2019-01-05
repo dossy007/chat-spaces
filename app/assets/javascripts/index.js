@@ -13,7 +13,7 @@ $(function() {
 	function appendNoUsers(user) { //htmlをなくす処理
 		var html =`<div class='chat-group-form__field--right'>
 		           </div>`
-		           user_list.append(html);
+		user_list.append();
 	}
 	$("#user-search-field").on("keyup", function() {
 		var input = $("#user-search-field").val();
@@ -25,18 +25,21 @@ $(function() {
 		    contentType: false
 		})
 		.done(function(users) {
+			user_list.empty();
 			if (users.length !== 0) {//usersの要素が０ではない時(ある時
 				users.forEach(function(user) {//forEachは、要素を一つづつ呼び出す。この時、検索済みにしたい。
 				appendUsers(user);
-				console.log(user)
 				});
 		    }else {
-		    	appendNoUsers("一致しません。")
-		    	console.log('できてへん')
+		    	console.log('一致しません')
+		    	appendNoUsers('一致する映画はありません');
 		    }
 		})
 		.fail(function(){
-		alert('取得失敗')
+		alert('通信失敗')
 	    })
+	 //    .always(function() {
+		// user_list.empty();
+	 //    })
 	})
 })
