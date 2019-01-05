@@ -10,7 +10,7 @@ $(function() {
 		user_list.append(html);
 	}
 
-	function appendNoUsers(user) { //htmlをなくす処理
+	function appendNoUsers(user) {
 		var html =`<div class='chat-group-form__field--right'>
 		           </div>`
 		user_list.append();
@@ -26,13 +26,13 @@ $(function() {
 		})
 		.done(function(users) {
 			user_list.empty();
-			if (users.length !== 0) {//usersの要素が０ではない時(ある時
-				users.forEach(function(user) {//forEachは、要素を一つづつ呼び出す。この時、検索済みにしたい。
+			if (users.length !== 0) {
+				users.forEach(function(user) {
 				appendUsers(user);
 				});
 		    }else {
 		    	console.log('一致しません')
-		    	appendNoUsers('一致する映画はありません');
+		    	appendNoUsers('一致するものはありません');
 		    }
 		})
 		.fail(function(){
