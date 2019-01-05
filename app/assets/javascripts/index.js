@@ -1,5 +1,5 @@
 $(function() {
-	var user_list = $("#user_search_result")
+	var user_list = $("#user-search-result")
 
 	function appendUsers(user) { //htmlを加える処理
 		var html = `<div class="chat-group-user clearfix">
@@ -13,7 +13,7 @@ $(function() {
 	function appendNoUsers(user) { //htmlをなくす処理
 		var html =`<div class='chat-group-form__field--right'>
 		           </div>`
-		           $(".user-search-result").append(html);
+		           user_list.append(html);
 	}
 	$("#user-search-field").on("keyup", function() {
 		var input = $("#user-search-field").val();
@@ -26,13 +26,13 @@ $(function() {
 		    contentType: false
 		})
 		.done(function(users) {
-			$(".user-search-result").empty();
-			if (users.length !== 0) {
-				users.forEach(function(user) {
-					appendUsers(user);
-					console.log(user)
+			if (users.length !== 0) {//usersの要素が０ではない時(ある時
+				users.forEach(function(user) {//forEachは、要素を一つづつ呼び出す。この時、検索済みにしたい。
+				appendUsers(user);
+				console.log(user)
 				});
 		    }else {
+		    	appendNoUsers("一致しません。")
 		    	console.log('できてへん')
 		    }
 		})
