@@ -1,7 +1,7 @@
 $(function() {
 	var user_list = $("#user-search-result")
 
-	function appendUsers(user) { //htmlを加える処理
+	function appendUsers(user) {
 		var html = `<div class="chat-group-user clearfix">
 		              <p class="chat-group-user__name">${user.name}</p>
                       <a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加
@@ -10,13 +10,15 @@ $(function() {
 		user_list.append(html);
 	}
 
-	function appendNoUsers(user) {
-		var html =`<div class='chat-group-form__field--right'>
+	function appendNoUsers(fail) {
+		var html =`<div class="chat-group-user clearfix">
+					<p class="chat-group-user__name">${fail}</p>
 		           </div>`
-		user_list.append();
+		user_list.append(html);
 	}
 	$("#user-search-field").on("keyup", function() {
 		var input = $("#user-search-field").val();
+		if(input !== "") {
 		$.ajax( {
 			type: 'GET',
 			url: '/users',
@@ -24,19 +26,22 @@ $(function() {
 			dataType: 'json',
 		    contentType: false
 		})
-		.done(function(users) {
+		.done(function(users,input) {
 			user_list.empty();
 			if (users.length !== 0) {
 				users.forEach(function(user) {
 				appendUsers(user);
 				});
-		    }else {
-		    	console.log('一致しません')
-		    	appendNoUsers('一致するものはありません');
+		    }else{
+		    	appendNoUsers('一致しません');
+
 		    }
 		})
 		.fail(function(){
 		alert('通信失敗')
 	    })
+	    }else{
+	    	user_list.empty();
+	    }
 	})
 })
