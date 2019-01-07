@@ -18,7 +18,7 @@ $(function() {
 	}
 	$("#user-search-field").on("keyup", function() {
 		var input = $("#user-search-field").val();
-		if(input !== "") {
+		if(input.length !== 0) {
 		$.ajax( {
 			type: 'GET',
 			url: '/users',
