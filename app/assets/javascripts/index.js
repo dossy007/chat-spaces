@@ -56,10 +56,14 @@ $(function() {
 	$("#user-search-result").on('click', '.user_search_add',function() {
 		var id = $(this).data('user-id')
 		var name =$(this).data('user-name')
-		var buildhtml = deleteHTML(id,name)
+		var deletehtml = deleteHTML(id,name)
 		//thisは<a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
-		$("#chat-group-users").append(buildhtml)
+		$("#chat-group-users").append(deletehtml)
 		$(this).parent().remove();  //thisの親要素を取得し、削除
 		console.log(this)
 	})
+
+	// $("chat_group-form__action_btn").on('submit', function() {
+
+	// })
 })
