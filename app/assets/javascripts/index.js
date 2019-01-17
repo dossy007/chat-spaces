@@ -61,7 +61,8 @@ $(function() {
 		$(this).parent().remove();  //thisの親要素を取得し、削除
 		$("#chat-group-users").append(name)
 	})
-	$(".chat-group-user").on('click','user-search-remove',function() {
+	//id user-search-resultのremoveをクリックすると発火。
+	$("#user-search-result").on('click','user-search-remove',function() {
 		console.log(this)
 	})
 	// $("chat_group-form__action_btn").on('submit', function() {
