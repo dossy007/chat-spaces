@@ -9,7 +9,7 @@ $(function() {
 		            </div>`
 		user_list.append(html);
 	}
-	function buildHTML(id, name) { //chat memberに追加するhtml
+	function deleteHTML(id, name) {
 		var html = `<div class='chat-group-user clearfix js-chat-member' id='${id}'>
   			<input name='group[user_ids][]' type='hidden' value='${id}'>
   			<p class='chat-group-user__name'>${name}</p>
@@ -54,11 +54,12 @@ $(function() {
 	})
 //追加を押されたときに。イベントが発火。
 	$("#user-search-result").on('click', '.user_search_add',function() {
-		var id = $(this).data('user_id')
+		var id = $(this).data('user-id')
 		var name =$(this).data('user-name')
 		var buildhtml = buildHTML(id,name)
 		//thisは<a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
 		$("#chat-group-users").append(buildhtml)
-		console.log(this)
+		$(this).remove()
+		console.log(buildHTML)
 	})
 })
