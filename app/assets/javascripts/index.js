@@ -59,7 +59,7 @@ $(function() {
 		var buildhtml = deleteHTML(id,name)
 		//thisは<a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
 		$("#chat-group-users").append(buildhtml)
-		$(this).remove()
-		console.log(deleteHTML)
+		$(this).parent().remove();  //thisの親要素を取得し、削除
+		console.log(this)
 	})
 })
