@@ -16,7 +16,6 @@ $(function() {
   			<a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
 			</div>`
 		user_list.append(html);
-
 	}
 
 	function appendNoUsers(fail) {
@@ -31,7 +30,7 @@ $(function() {
 		$.ajax( {
 			type: 'GET',
 			url: '/users',
-			data: {keyword: input},
+			data: {name: name},
 			dataType: 'json',
 		    contentType: false
 		})
@@ -62,7 +61,10 @@ $(function() {
 		$(this).parent().remove();  //thisの親要素を取得し、削除
 		console.log(this)
 	})
+	$("#chat-group-users").on('click','user-search-remove',function() {
+		$("#chat-group-users").append(deletehtml)
 
+	})
 	// $("chat_group-form__action_btn").on('submit', function() {
 
 	// })
