@@ -9,7 +9,7 @@ $(function() {
 		            </div>`
 		user_list.append(html);
 	}
-	function deleteHTML(id, name) {
+	function deleteHTML(id,name) {
 		var html = `<div class='chat-group-user clearfix js-chat-member' id='${id}'>
   			<input name='group[user_ids][]' type='hidden' value='${id}'>
   			<p class='chat-group-user__name'>${name}</p>
@@ -57,14 +57,19 @@ $(function() {
 		var name =$(this).data('user-name')
 		var deletehtml = deleteHTML(id,name)
 		//thisは<a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
-		$("#chat-group-users").append(deletehtml)
+		$("#chat-group-users").append(deletehtml)  //削除ボタンを追加するhtmlをappend
 		$(this).parent().remove();  //thisの親要素を取得し、削除
-		$("#chat-group-users").append(name)
+		$("#chat-group-users").append(name) //rightにnameが追加される
 		console.log(this)
 	})
 	//id user-search-resultのremoveをクリックすると発火。
 	$("#user-search-result").on('click','.user-search-remove',function() {
+		var id = $(this).data('user_id') //thisのidを取得
+		// $(`#chat-group-user-${id}`).remove();
+		$(this).parent().remove();  //削除ボタンを削除
 		console.log(this)
+		//thisは<a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+		// $("#chat-group-users").remove(name);
 	})
 	// $("chat_group-form__action_btn").on('submit', function() {
 
