@@ -24,7 +24,7 @@
         - @group.members.each do |member|
           = member.user.name
       = link_to edit_user_path(current_user) do
-        %div.chat-main__header--group-edit{:style => "text-decoration: none;"} edit
+        %div.chat-main__header--group-edit{style: "text-decoration: none;"} edit
     %div.chat-main__body{style: "overflow:scroll"}
       #chat-main__body--scroll
         %div.chat-main__body--message

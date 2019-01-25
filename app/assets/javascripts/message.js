@@ -39,9 +39,5 @@ $(function() {
 		.fail(function() {
 			alert('error')
 		})
-		.always(function(data) {
-			$('.submit').prop("disabled", false);
-
-		});
 	})
 });
