@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
 $(function() {
     var user_list = $("#user-search-result")
-    function appendUsers(user) { //追加ボタン
+    function appendUsers(user) {
         var html = `<div class="chat-group-user clearfix">
                       <p class="chat-group-user__name">${user.name}</p>
                       <a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加
@@ -9,7 +9,7 @@ $(function() {
                     </div>`
         user_list.append(html);
     }
-    function deleteHTML(id,name) {  //削除ボタン
+    function deleteHTML(id,name) {
         var html = `<div class='chat-group-user clearfix js-chat-member' id='${id}'>
               <input name='group[user_ids][]' type='hidden' value='${id}'>
               <p class='chat-group-user__name'>${name}</p>
