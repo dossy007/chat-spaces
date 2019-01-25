@@ -1,3 +1,5 @@
+$(document).on('turbolinks:load', function() {
+
 $(function() {
 	var user_list = $("#user-search-result") //idもhtmlに加えるための処理
 
@@ -69,3 +71,4 @@ $(function() {
 		$(this).parent().remove();  //削除ボタンを削除
 	})
 })
+});
