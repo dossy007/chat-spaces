@@ -30,7 +30,7 @@ $(function() {
 		$.ajax( {
 			type: 'GET',
 			url: '/users',
-			data: {name: name},
+			data: {name: input},
 			dataType: 'json',
 		    contentType: false
 		})
@@ -67,10 +67,5 @@ $(function() {
 	$("#chat-group-users").on('click','.user-search-remove',function() {
 		// $(`#chat-group-user-${id}`).remove();
 		$(this).parent().remove();  //削除ボタンを削除
-		//thisは<a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
-		// $("#chat-group-users").remove(name);
 	})
-	// $("chat_group-form__action_btn").on('submit', function() {
-
-	// })
 })
