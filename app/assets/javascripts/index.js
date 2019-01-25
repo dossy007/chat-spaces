@@ -15,7 +15,7 @@ $(function() {
   			<p class='chat-group-user__name'>${name}</p>
   			<a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
 			</div>`
-		user_list.append(html);
+		return html;
 	}
 
 	function appendNoUsers(fail) {
@@ -55,19 +55,18 @@ $(function() {
 	$("#user-search-result").on('click', '.user_search_add',function() {
 		var id = $(this).data('user-id')
 		var name =$(this).data('user-name')
-		var deletehtml = deleteHTML(id,name)
-		//thisは<a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
-		$("#chat-group-users").append(deletehtml)  //削除ボタンを追加するhtmlをappend
+		// var deletehtml = deleteHTML(id,name)
+ 		console.log(this)
+		 ////returnがないので、varには何にも入らない！？
+		// $(`#chat-group-users-${id}`).append(deletehtml)
+		  //追加を押すと他のidも一緒にいってしまう。では、クリックしたものだけを移動させよう。
+		$("#chat-group-users").append(deleteHTML(id,name)) //rightにnameが追加される
 		$(this).parent().remove();  //thisの親要素を取得し、削除
-		$("#chat-group-users").append(name) //rightにnameが追加される
-		console.log(this)
 	})
 	//id user-search-resultのremoveをクリックすると発火。
-	$("#user-search-result").on('click','.user-search-remove',function() {
-		var id = $(this).data('user_id') //thisのidを取得
+	$("#chat-group-users").on('click','.user-search-remove',function() {
 		// $(`#chat-group-user-${id}`).remove();
 		$(this).parent().remove();  //削除ボタンを削除
-		console.log(this)
 		//thisは<a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
 		// $("#chat-group-users").remove(name);
 	})
