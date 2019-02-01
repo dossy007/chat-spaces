@@ -40,4 +40,7 @@ $(function() {
 			alert('error')
 		})
 	})
+	$(function() {
+		serInterval(update,10000);
+	});
 });
