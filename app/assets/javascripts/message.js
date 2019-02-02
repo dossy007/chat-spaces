@@ -41,8 +41,9 @@ $(function() {
 		})
 	})
 	$(function() {
-		serInterval(update,10000);
+		setInterval(update,10000);
 	});
+
 	function update() {
 		var message_id = $("'message:last").data('id');
 		$.ajax( {
