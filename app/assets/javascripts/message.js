@@ -51,6 +51,13 @@ $(function() {
 			data: {
 				message: {id: message_id }
 			},
+			datatype: 'json'
 		})
+		.always(function(data) {
+			$.each(data,function(i,data) {
+				buildHTML(data);
+			});
+		});
+		console.log(message_id)
 	}
 });
