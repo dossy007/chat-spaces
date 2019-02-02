@@ -43,4 +43,14 @@ $(function() {
 	$(function() {
 		serInterval(update,10000);
 	});
+	function update() {
+		var message_id = $("'message:last").data('id');
+		$.ajax( {
+			url: location.href,
+			type: 'GET',
+			data: {
+				message: {id: message_id }
+			},
+		})
+	}
 });
