@@ -35,30 +35,48 @@ $(function() {
 			$('.chat-main__body--message').append(html);
 			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
 		})
-
 		.fail(function() {
 			alert('error')
 		})
 	})
 	$(function() {
-		setInterval(update,10000);
-	});
-
-	function update() {
-		var message_id = $("'message:last").data('id');
-		$.ajax( {
+		var interval = setInterval(update,3000); //10秒ごとにupdate機能を実行
+		});
+	function update() { //update機能 自動更新
+		// var  current_url = window.location.href
+		var last_message_id = $("ul").data('id');
+		if(window.location.href.match(/\/groups\/\d+\/messages/)) {
+			$.ajax( {
 			url: location.href,
 			type: 'GET',
 			data: {
-				message: {id: message_id }
+				message: {id: last_message_id}
 			},
 			datatype: 'json'
+		　　})
+
+		.done(function(data) { //dataは、htmlの塊
+			// message.forEach(function(message) {
+				//eachを使って、messageを全て回す
+			console.log(ul)
+			// });
 		})
-		.always(function(data) {
-			$.each(data,function(i,data) {
-				buildHTML(data);
-			});
+		.fail(function(message) {
+			alert('自動更新失敗')
 		});
-		console.log(message_id)
-	}
+	    }
+	    else {
+	    	console.log('大失敗')
+	    };
+	};
+
+
+	// 	// var message_id = $("'message:last").data('id');
+	// 	.always(function(data) {
+	// 		$.each(data,function(i,data) {
+	// 			buildHTML(data);
+	// 		});
+	// 	});
+	// 	//多分、htmlを追加、idも追加する処理が必要
+	// }
 });
