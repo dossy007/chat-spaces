@@ -1,4 +1,4 @@
-- messages.each do |message|
+- messages.each do |message|{data: {id: "#{message.id}"}}
   %ul
     %li.chat-main__body--message-name
       = message.user.name
