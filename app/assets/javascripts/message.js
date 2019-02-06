@@ -44,7 +44,7 @@ $(function() {
 		});
 	function update() { //update機能 自動更新
 		// var  current_url = window.location.href
-		var last_message_id = $("ul").data('id');
+		var last_message_id = $(".chat-main__body--message:last").data('id');
 		if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 			$.ajax( {
 			url: location.href,
@@ -58,7 +58,7 @@ $(function() {
 		.done(function(data) { //dataは、htmlの塊
 			// message.forEach(function(message) {
 				//eachを使って、messageを全て回す
-			console.log(ul)
+			console.log(last_message_id)
 			// });
 		})
 		.fail(function(message) {
