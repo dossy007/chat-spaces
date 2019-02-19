@@ -59,7 +59,8 @@ $(function() {
 		.done(function(data) { //dataは、htmlの塊
 			// message.forEach(function(message) {
 				//eachを使って、messageを全て回す
-			console.log(message)
+				console.log(message_id)
+				console.log(data)
 			data.forEach(function(message){
 				var html = buildHTML(message);
 				$('.chat-main__body--message').append(html);
