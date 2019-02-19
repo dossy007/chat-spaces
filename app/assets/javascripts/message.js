@@ -43,26 +43,32 @@ $(function() {
 		var interval = setInterval(update,3000); //10秒ごとにupdate機能を実行
 		});
 	function update() { //update機能 自動更新
-		// var  current_url = window.location.href
-		var last_message_id = $(".chat-main__body--message:last").data('id');
+		// var last_message_id = $(".chat-main__body--message:last").data('id');
+		 // var group_id = $('.chat-main__body').filter(":last").data('message-id')
+		 var message_id = $('ul:last').val('datamessage_id');
 		if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 			$.ajax( {
 			url: location.href,
 			type: 'GET',
 			data: {
-				message: {id: last_message_id}
+				message: {id: message_id}
 			},
-			datatype: 'json'
+			datatype: 'json',
+			processData: false
 		　　})
-
 		.done(function(data) { //dataは、htmlの塊
 			// message.forEach(function(message) {
 				//eachを使って、messageを全て回す
-			console.log(last_message_id)
-			// });
+			console.log(message)
+			data.forEach(function(message){
+				var html = buildHTML(message);
+				$('.chat-main__body--message').append(html);
+
+			})
 		})
 		.fail(function(message) {
-			alert('自動更新失敗')
+			console.log('自動更新失敗')
+			// alert('自動更新失敗')
 		});
 	    }
 	    else {
