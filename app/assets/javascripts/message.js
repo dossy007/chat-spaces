@@ -40,10 +40,10 @@ $(function() {
 		})
 	})
 	$(function() {
-		var interval = setInterval(update,3000); //10秒ごとにupdate機能を実行
+		var interval = setInterval(update,10000);
 		});
 	function update() { //update機能 自動更新
-		 var message_id = $('ul:last').data('message_id'); //カスタムデータを使用
+		 var message_id = $('ul:last').data('message_id');
 		if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 			$.ajax( {
 			url: location.href,
@@ -51,11 +51,9 @@ $(function() {
 			data: {
 				message: {id: message_id}
 			},
-			dataType: 'json' //dataTypeは大文字
-			// formdataは不要。
+			dataType: 'json'
 		　　})
-		.done(function(data) { //dataは、htmlの塊
-				//eachを使って、messageを全て回す
+		.done(function(data) {
 			data.forEach(function(message){
 				var html = buildHTML(message);
 				$('.chat-main__body--message').append(html);

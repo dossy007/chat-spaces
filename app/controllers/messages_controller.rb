@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 
 	def create
 		@message = @group.messages.new(message_params)
-		if @message.save #保存できたら、jsonを返す。
+		if @message.save
 			respond_to do |format|
 				format.json
 		    end
