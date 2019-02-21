@@ -42,25 +42,25 @@ $(function() {
 	$(function() {
 		var interval = setInterval(update,10000);
 		});
-	function update() { //update機能 自動更新
-		var message_id = $('ul:last').data('message_id');
-		if(window.location.href.match(/\/groups\/\d+\/messages/)) {
-			$.ajax( {
-			url: location.href,
-			type: 'GET',
-			data: {
-				message: {id: message_id}
-			},
-			dataType: 'json'
-		　　})
-		.done(function(data) {
-			data.forEach(function(message){
-				var html = buildHTML(message);
-				$('.chat-main__body--message').append(html);
+		function update() { //update機能 自動更新
+			var message_id = $('ul:last').data('message_id');
+			if(window.location.href.match(/\/groups\/\d+\/messages/)) {
+				$.ajax( {
+				url: location.href,
+				type: 'GET',
+				data: {
+					message: {id: message_id}
+				},
+				dataType: 'json'
+			　　})
+			.done(function(data) {
+				data.forEach(function(message){
+					var html = buildHTML(message);
+					$('.chat-main__body--message').append(html);
+				})
 			})
-		})
-		.fail(function(message) {
-		});
-	    }
-	};
+			.fail(function(message) {
+			});
+		    }
+		};
 });
