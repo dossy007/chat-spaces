@@ -43,10 +43,7 @@ $(function() {
 		var interval = setInterval(update,3000); //10秒ごとにupdate機能を実行
 		});
 	function update() { //update機能 自動更新
-		// var last_message_id = $(".chat-main__body--message:last").data('id');
-		 // var group_id = $('.chat-main__body').filter(":last").data('message-id')
-		 var message_id = $('ul:last').data('message_id');
-		console.log(message_id)
+		 var message_id = $('ul:last').data('message_id'); //カスタムデータを使用
 		if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 			$.ajax( {
 			url: location.href,
@@ -54,35 +51,21 @@ $(function() {
 			data: {
 				message: {id: message_id}
 			},
-			dataType: 'json'
+			dataType: 'json' //dataTypeは大文字
+			// formdataは不要。
 		　　})
 		.done(function(data) { //dataは、htmlの塊
-			// message.forEach(function(message) {
 				//eachを使って、messageを全て回す
-				console.log(data)
 			data.forEach(function(message){
 				var html = buildHTML(message);
 				$('.chat-main__body--message').append(html);
-
 			})
 		})
 		.fail(function(message) {
-			console.log('自動更新失敗')
-			// alert('自動更新失敗')
 		});
 	    }
 	    else {
 	    	console.log('大失敗')
 	    };
 	};
-
-
-	// 	// var message_id = $("'message:last").data('id');
-	// 	.always(function(data) {
-	// 		$.each(data,function(i,data) {
-	// 			buildHTML(data);
-	// 		});
-	// 	});
-	// 	//多分、htmlを追加、idも追加する処理が必要
-	// }
 });
