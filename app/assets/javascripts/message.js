@@ -4,7 +4,7 @@ $(function() {
 	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`
 
 	var html = `
-    <ul>
+    <ul data-message_id="${message.id}">
       <li class="chat-main__body--message-name">
         ${message.user_name}
       </li>
@@ -25,7 +25,7 @@ $(function() {
 			url: url,
 			type: 'POST',
 		    data: formData,
-		    datatype: 'json',
+		    dataType: 'json',
 		    processData: false,
 		    contentType: false
 		})
@@ -45,7 +45,8 @@ $(function() {
 	function update() { //update機能 自動更新
 		// var last_message_id = $(".chat-main__body--message:last").data('id');
 		 // var group_id = $('.chat-main__body').filter(":last").data('message-id')
-		 var message_id = $('ul:last').val('datamessage_id');
+		 var message_id = $('ul:last').data('message_id');
+		console.log(message_id)
 		if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 			$.ajax( {
 			url: location.href,
@@ -53,13 +54,11 @@ $(function() {
 			data: {
 				message: {id: message_id}
 			},
-			datatype: 'json',
-			processData: false
+			dataType: 'json'
 		　　})
 		.done(function(data) { //dataは、htmlの塊
 			// message.forEach(function(message) {
 				//eachを使って、messageを全て回す
-				console.log(message_id)
 				console.log(data)
 			data.forEach(function(message){
 				var html = buildHTML(message);
