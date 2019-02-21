@@ -62,8 +62,5 @@ $(function() {
 		.fail(function(message) {
 		});
 	    }
-	    else {
-	    	console.log('大失敗')
-	    };
 	};
 });
