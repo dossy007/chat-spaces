@@ -41,7 +41,7 @@ $(function() {
 	})
 	$(function() {
 		var interval = setInterval(update,10000);
-		});
+	});
 		function update() { //update機能 自動更新
 			var message_id = $('ul:last').data('message_id');
 			if(window.location.href.match(/\/groups\/\d+\/messages/)) {
