@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
 		@messages = @group.messages.includes(:user)
 		respond_to do |format|
 			format.html
-			format.json{@new_messages = Message.where('id > ?', params[:message][:id])}
+			format.json{ @new_messages = Message.where('id > ?', params[:message][:id]) }
 		end
 	end
 
@@ -15,15 +15,15 @@ class MessagesController < ApplicationController
 
 	def create
 		@message = @group.messages.new(message_params)
-		respond_to do |format|
-			if @message.save
+		if @message.save
+			respond_to do |format|
 				format.json
-			else
-				@messages = @group.messages.includes(:user)
-				flash.now[:alert] = 'messagesを入力してください'
-				render :index
-			end
-	    end
+		    end
+		else
+			@messages = @group.messages.includes(:user)
+			flash.now[:alert] = 'messagesを入力してください'
+			render :index
+		end
 	end
 
 	def delete
