@@ -6,7 +6,5 @@ FactoryBot.define do
     # image File.open("#{Rails.root}/public/images/no_image.jpg")
 
     #これは、何をやっているのか？
-    user
-    group
   end
 end
