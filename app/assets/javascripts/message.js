@@ -1,4 +1,5 @@
-$(function() {
+
+$(document).on('turbolinks:load', function() {
 	function buildHTML(message) {
 	var insert_content = message.image_url ? `<li class="chat-main__body--message-text"> ${message.text}
 	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`

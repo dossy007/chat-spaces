@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', function() {
-$(function() {
     var user_list = $("#user-search-result")
     function appendUsers(user) {
         var html = `<div class="chat-group-user clearfix">
@@ -59,5 +58,4 @@ $(function() {
     $("#chat-group-users").on('click','.user-search-remove',function() {
         $(this).parent().remove();
     })
-})
 });
