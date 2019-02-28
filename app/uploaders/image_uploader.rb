@@ -6,7 +6,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [300, 300]
   # resize_to_fitは縦横比を維持したまま、width, heightを800pxにリサイズする意味。
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage :fog
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
