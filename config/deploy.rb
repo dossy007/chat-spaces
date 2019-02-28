@@ -7,7 +7,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
-set :rbenv_path, '/home/deploy.rbenv'
+set :rbenv_path, '$HOME/deploy.rbenv'
 set :bundle_path, './vendor/bundle'
 set :bundle_gemfile, "server/Gemfile"
 set :rails_root, "server"
