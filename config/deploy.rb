@@ -13,7 +13,7 @@ set :bundle_gemfile, "server/Gemfile"
 set :rails_root, "server"
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)}#{fetch(:rbenv_path)}/bin/rbenv exec"
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/dossy.pem']
+                  keys: ['~/.ssh/dossyyy.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
