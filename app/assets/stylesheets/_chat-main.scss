@@ -8,7 +8,7 @@
     padding: 0 40px 0 40px;
     border-bottom: 1px solid $gray;
     border-right: 1px solid $gray;
-    .chat-main__header--group {
+    &--group {
       font-size: 20px;
       font-color: $black;
       padding: 35px 0 15px;
@@ -63,9 +63,16 @@
     bottom: 0;
     padding: 20px 40px 20px 40px;
     background-color: gray;
-      .input_text {
-        height: 50px;
-        width: 85%;
+      &-text {
+        .input_text {
+          height: 50px;
+          width: 85%;
+        }
+        .img_icon {
+          position: relative;
+          left: 1em;
+          color: black;
+        }
       }
       .submit {
         position: relative;
@@ -75,11 +82,6 @@
         color: white;
         border: 1px solid $light_blue;
         left: 2em;
-      }
-      .img_icon {
-        position: relative;
-        left: 1em;
-        color: black;
       }
   }
 }
