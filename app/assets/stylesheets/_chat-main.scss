@@ -57,20 +57,21 @@
       }
   }
   .chat-main__footer {
-    width: 75%;
+    width: 80%;
     height: 7%;
     position: absolute;
     bottom: 0;
     padding: 20px 40px 20px 40px;
     background-color: gray;
       &-text {
+        width: 80%;
         .input_text {
           height: 50px;
           width: 85%;
         }
         .img_icon {
-          position: relative;
-          left: 1em;
+          // position: relative;
+          // left: 1em;
           color: black;
         }
       }
