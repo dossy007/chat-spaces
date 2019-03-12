@@ -31,8 +31,9 @@
           = render 'chat-main__body--message', messages: @messages
     %div.chat-main__footer
       = form_for [@group, @message] do |f|
-        = f.text_field :text, class: 'input_text', placeholder: 'type a message'
-        = f.label :image do
-          = fa_icon 'image', class: 'img_icon'
-          = f.file_field :image, style: 'display:none'
+        %div.chat-main__footer-text
+          = f.text_field :text, class: 'input_text', placeholder: 'type a message'
+          = f.label :image do
+            = fa_icon 'image', class: 'img_icon'
+            = f.file_field :image, style: 'display:none'
         = f.submit 'send', class: 'submit'
