@@ -65,25 +65,30 @@
     background-color: gray;
       &-text {
         width: 80%;
+        display: inline-block;
+        background-color: white;
         .input_text {
+          display: inline-block;
+          border-style: none;
           height: 50px;
           width: 95%;
         }
-        .img_icon {
-          background-color: white;
-          // position: relative;
-          // left: 1em;
+        &-img {
+          display: inline-block;
+          width:3%;
+          .img_icon {
           color: black;
+          font-size: 150%;
+          }
         }
       }
       .submit {
-        position: relative;
+        display: inline-block;
         background-color: $light_blue;
         height: 50px;
-        width: 90px;
+        width: 10%;
         color: white;
         border: 1px solid $light_blue;
-        left: 2em;
       }
   }
 }
