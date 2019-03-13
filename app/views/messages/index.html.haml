@@ -33,7 +33,8 @@
       = form_for [@group, @message] do |f|
         %div.chat-main__footer-text
           = f.text_field :text, class: 'input_text', placeholder: 'type a message'
-          = f.label :image do
-            = fa_icon 'image', class: 'img_icon'
-            = f.file_field :image, style: 'display:none'
+          %div.chat-main__footer-text-img
+            = f.label :image do
+              = fa_icon 'image', class: 'img_icon'
+              = f.file_field :image, style: 'display:none'
         = f.submit 'send', class: 'submit'
