@@ -32,6 +32,8 @@
     }
     &-right {
       width:9%;
+      display: inline-block;
+      &-edit {
         width: 70px;
         height: 40px;
         color: $blueback;
