@@ -22,6 +22,7 @@
         %div.chat-main__header-left-name
           = @group.name
         %div.chat-main__header-left-user
+          Member :
           - @group.members.each do |member|
             = member.user.name
       %div.chat-main__header-right
