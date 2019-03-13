@@ -9,12 +9,15 @@
     border-bottom: 1px solid $gray;
     // border-right: 1px solid $gray;
     &-left {
+      display: inline-block;
       &-name {
+        display: block;
         font-size: 20px;
         font-color: $black;
         padding: 35px 0 15px;
       }
       &-user {
+        display: block;
         font-size: 12px;
         font-color: #999999;
       }
