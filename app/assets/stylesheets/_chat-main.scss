@@ -4,29 +4,33 @@
   width: 80%;
   &__header {
   	height: 15%;
-    width:107%;
+    width:93.7%;
     padding: 0 40px 0 40px;
     border-bottom: 1px solid $gray;
     border-right: 1px solid $gray;
-    &--group {
-      font-size: 20px;
-      font-color: $black;
-      padding: 35px 0 15px;
+    &-left {
+      &-name {
+        font-size: 20px;
+        font-color: $black;
+        padding: 35px 0 15px;
+      }
+      &-user {
+        font-size: 12px;
+        font-color: #999999;
+      }
     }
-    .chat-main__header--group-user {
-      font-size: 12px;
-      font-color: #999999;
-    }
-    .chat-main__header--group-edit {
-      width: 70px;
-      height: 40px;
-      position: relative;
-      bottom: 4em;
-      left: 60em;
-      text-align: center;
-      border: 1px solid $blueback;
-      padding-top: 10px;
-      color: $blueback;
+    &-right {
+      .chat-main__header--group-edit {
+        width: 70px;
+        height: 40px;
+        position: relative;
+        bottom: 4em;
+        left: 60em;
+        text-align: center;
+        border: 1px solid $blueback;
+        padding-top: 10px;
+        color: $blueback;
+      }
     }
   }
   .chat-main__body {
@@ -57,7 +61,7 @@
       }
   }
   .chat-main__footer {
-    width: 80%;
+    width: 75%;
     height: 7%;
     position: absolute;
     bottom: 0;
