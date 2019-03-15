@@ -7,7 +7,6 @@
     width:93.7%;
     padding: 0 40px 0 40px;
     border-bottom: 1px solid $gray;
-    // border-right: 1px solid $gray;
     &-left {
       position: relative;
       display: inline-block;
@@ -24,19 +23,40 @@
       &-user {
         position: absolute;
         bottom: 0;
-        // height:40%;
+        height:40%;
         display: block;
         font-size: 12px;
         font-color: #999999;
       }
     }
     &-right {
-      width:9%;
       display: inline-block;
+      height:100%;
+      width:8%;
+      position:relative;
       &-edit {
-        width: 70px;
-        height: 40px;
+        // position:absolute;
+        // margin:auto;
+        position: absolute;
+        line-height: 30px;
+        padding: 0 10px;
+        height:30%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        width:70%;
+        // display: inline-block;
+        text-align:center;
+        border: 1px solid #aaa;
+        // padding: 20px 25px;
+        // padding-top:5px;
+        // text-align: center;
+        // height:40%;
+        // transform: translateY(45%) ;
+        // margin:auto;
+        // height: 40px;
         color: $blueback;
+        // vertical-align: middle;
       }
     }
   }
