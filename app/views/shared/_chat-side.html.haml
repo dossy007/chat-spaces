@@ -13,4 +13,5 @@
         = link_to group_messages_path(group) do
           %div.chat-side__group--list-name
             = group.name
-          %div.chat-side__group--list-message message index
+          %div.chat-side__group--list-message
+            = group.show_last_message

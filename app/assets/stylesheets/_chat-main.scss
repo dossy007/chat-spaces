@@ -1,32 +1,55 @@
 .chat-main {
   float: left;
   height: 100%;
-  width: 70%;
+  width: 80%;
   &__header {
   	height: 15%;
-    width:107%;
+    width:93.7%;
     padding: 0 40px 0 40px;
     border-bottom: 1px solid $gray;
-    border-right: 1px solid $gray;
-    .chat-main__header--group {
-      font-size: 20px;
-      font-color: $black;
-      padding: 35px 0 15px;
-    }
-    .chat-main__header--group-user {
-      font-size: 12px;
-      font-color: #999999;
-    }
-    .chat-main__header--group-edit {
-      width: 70px;
-      height: 40px;
+    &-left {
       position: relative;
-      bottom: 4em;
-      left: 60em;
-      text-align: center;
-      border: 1px solid $blueback;
-      padding-top: 10px;
-      color: $blueback;
+      display: inline-block;
+      width:90%;
+      height:100%;
+      &-name {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        height:70%;
+        font-size: 20px;
+        font-color: $black;
+      }
+      &-user {
+        position: absolute;
+        bottom: 0;
+        height:40%;
+        display: block;
+        font-size: 12px;
+        font-color: #999999;
+      }
+    }
+    &-right {
+      display: inline-block;
+      height:100%;
+      width:8%;
+      position:relative;
+      &-edit {
+        position: absolute;
+        line-height: 40px;
+        padding: 0 10px;
+        height:40%;
+        width:70%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        text-align:center;
+        border: 1px solid $blueback;
+      }
+      &-edit a {
+        text-decoration: none;
+        color: $blueback;
+      }
     }
   }
   .chat-main__body {
@@ -63,23 +86,33 @@
     bottom: 0;
     padding: 20px 40px 20px 40px;
     background-color: gray;
-      .input_text {
-        height: 50px;
-        width: 85%;
+      &-text {
+        width: 80%;
+        display: inline-block;
+        background-color: white;
+        .input_text {
+          display: inline-block;
+          border-style: none;
+          height: 50px;
+          width: 95%;
+        }
+        &-img {
+          display: inline-block;
+          width:3%;
+          .img_icon {
+          color: black;
+          font-size: 150%;
+          }
+        }
       }
       .submit {
-        position: relative;
+        display: inline-block;
+        margin-left: 2%;
         background-color: $light_blue;
         height: 50px;
-        width: 90px;
+        width: 10%;
         color: white;
         border: 1px solid $light_blue;
-        left: 2em;
-      }
-      .img_icon {
-        position: relative;
-        left: 1em;
-        color: black;
       }
   }
 }
