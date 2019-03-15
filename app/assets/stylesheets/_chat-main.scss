@@ -35,28 +35,13 @@
       width:8%;
       position:relative;
       &-edit {
-        // position:absolute;
-        // margin:auto;
         position: absolute;
-        line-height: 30px;
         padding: 0 10px;
-        height:30%;
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
-        width:70%;
-        // display: inline-block;
         text-align:center;
-        border: 1px solid #aaa;
-        // padding: 20px 25px;
-        // padding-top:5px;
-        // text-align: center;
-        // height:40%;
-        // transform: translateY(45%) ;
-        // margin:auto;
-        // height: 40px;
         color: $blueback;
-        // vertical-align: middle;
       }
     }
   }
