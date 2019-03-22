@@ -64,5 +64,10 @@ $(document).on('turbolinks:load', function() {
     $("#chat-group-users").on('click','.user-search-remove',function() {
         $(this).parent().remove();
         var id = $(this).data('user-id');
+
+        result = groups_ids.filter(function(value) {
+            return value != id
+        })
+        groups_ids = result;
     })
 });
