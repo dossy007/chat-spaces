@@ -59,6 +59,7 @@ $(document).on('turbolinks:load', function() {
         var name =$(this).data('user-name')
         $("#chat-group-users").append(deleteHTML(id,name))
         $(this).parent().remove();
+        groups_ids.push(id);
     })
     $("#chat-group-users").on('click','.user-search-remove',function() {
         $(this).parent().remove();
