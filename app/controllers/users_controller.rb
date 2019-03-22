@@ -23,4 +23,15 @@ class UsersController < ApplicationController
   def user_params
   	params.require(:user).permit(:name,:email)
   end
+
+  def edit_params
+    ids = [current_user.id]
+    if params[:group_ids]!= nil
+      params[:group_ids].each do |id|
+          ids << id.to_i
+      end
+    end
+    return ids
+  end
+
 end
