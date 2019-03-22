@@ -32,7 +32,6 @@ $(document).on('turbolinks:load', function() {
             type: 'GET',
             url: '/users',
             data: {name: input,
-            //ここにidを追加してみよう
             group_ids: groups_ids
             },
             dataType: 'json',
