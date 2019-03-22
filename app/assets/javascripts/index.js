@@ -29,7 +29,10 @@ $(document).on('turbolinks:load', function() {
         $.ajax( {
             type: 'GET',
             url: '/users',
-            data: {name: input},
+            data: {name: input,
+            //ここにidを追加してみよう
+            group_ids: groups_ids
+            },
             dataType: 'json',
             contentType: false
         })
