@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-    var groups_ids = [0]
+    var groups_ids = []
     var user_list = $("#user-search-result")
     function appendUsers(user) {
         var html = `<div class="chat-group-user clearfix">
