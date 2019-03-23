@@ -27,7 +27,7 @@
             = member.user.name
       %div.chat-main__header-right
         %div.chat-main__header-right-edit
-          = link_to edit_user_path(current_user) do
+          = link_to edit_group_path(@group.id) do
             edit
     %div.chat-main__body{style: "overflow:scroll"}
       #chat-main__body--scroll
