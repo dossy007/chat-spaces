@@ -64,10 +64,27 @@ $(document).on('turbolinks:load', function() {
     $("#chat-group-users").on('click','.user-search-remove',function() {
         $(this).parent().remove();
         var id = $(this).data('user-id');
-
         result = groups_ids.filter(function(value) {
             return value != id
         })
         groups_ids = result;
     })
+    $(window).on('load',function(){//page推移したらdeletehtmlが構築されている処理を書く
+
+
+        //仮置き
+        $.ajax( {
+            type: 'GET',
+            url: '/users',
+            dataType: 'json',
+            contentType: false
+        })
+        .done(function(users) {
+            // user_list.empty();
+            // if (users.length == 0) {
+            //     users.forEach(function(user) {
+            //     appendUsers(user);
+            //     });
+            // var id = $('.user-search-remove a');
+             var dd = $(".user-search-remove").attr('data-user-id')
 });
