@@ -78,11 +78,16 @@ $(document).on('turbolinks:load', function() {
             contentType: false
         })
         .done(function(users) {
-            // user_list.empty();
-            // if (users.length == 0) {
-            //     users.forEach(function(user) {
-            //     appendUsers(user);
-            //     });
-            // var id = $('.user-search-remove a');
-             var dd = $(".user-search-remove").attr('data-user-id')
-});
+             var data_html = $(".user-search-remove");
+             data_html.each(function(i,value) {
+                // var vv = value.dataset.userId;
+                // console.log(vv);
+                // groups_ids.push(vv);
+             })
+             console.log(groups_ids)
+            })
+        .fail(function(){
+        alert('通信失敗')
+        })
+    })
+})
