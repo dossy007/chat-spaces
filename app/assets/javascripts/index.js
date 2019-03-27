@@ -69,10 +69,8 @@ $(document).on('turbolinks:load', function() {
         })
         groups_ids = result;
     })
+
     $(window).on('load',function(){//page推移したらdeletehtmlが構築されている処理を書く
-
-
-        //仮置き
         $.ajax( {
             type: 'GET',
             url: '/users',
