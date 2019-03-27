@@ -80,9 +80,9 @@ $(document).on('turbolinks:load', function() {
         .done(function(users) {
              var data_html = $(".user-search-remove");
              data_html.each(function(i,value) {
-                // var vv = value.dataset.userId;
-                // console.log(vv);
-                // groups_ids.push(vv);
+                var u_id = value.dataset.userId;
+                console.log(u_id);
+                groups_ids.push(u_id);
              })
              console.log(groups_ids)
             })
