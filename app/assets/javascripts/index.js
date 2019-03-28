@@ -15,7 +15,6 @@ $(document).on('turbolinks:load', function() {
                 var u_id = value.dataset.userId;
                 groups_ids.push(u_id);
              })
-             console.log(groups_ids)
             })
         .fail(function(){
         alert('通信失敗')
