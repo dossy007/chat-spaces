@@ -13,7 +13,6 @@ $(document).on('turbolinks:load', function() {
              var data_html = $(".user-search-remove");
              data_html.each(function(i,value) {
                 var u_id = value.dataset.userId;
-                console.log(u_id);
                 groups_ids.push(u_id);
              })
              console.log(groups_ids)
