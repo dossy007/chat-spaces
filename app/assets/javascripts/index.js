@@ -1,5 +1,25 @@
 $(document).on('turbolinks:load', function() {
+    var groups_ids = []
     var user_list = $("#user-search-result")
+
+    // page推移したらdeletehtmlが構築されてgroups_idsにidが入る処理
+    $.ajax( {
+            type: 'GET',
+            url: '/users',
+            dataType: 'json',
+            contentType: false
+        })
+        .done(function(users) {
+             var data_html = $(".user-search-remove");
+             data_html.each(function(i,value) {
+                var u_id = value.dataset.userId;
+                groups_ids.push(u_id);
+             })
+            })
+        .fail(function(){
+        alert('通信失敗')
+        })
+
     function appendUsers(user) {
         var html = `<div class="chat-group-user clearfix">
                       <p class="chat-group-user__name">${user.name}</p>
@@ -12,7 +32,9 @@ $(document).on('turbolinks:load', function() {
         var html = `<div class='chat-group-user clearfix js-chat-member' id='${id}'>
               <input name='group[user_ids][]' type='hidden' value='${id}'>
               <p class='chat-group-user__name'>${name}</p>
-              <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+              <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove"
+                  data-user-id="${id}"
+                  js-remove-btn'>削除</a>
             </div>`
         return html;
     }
@@ -28,7 +50,9 @@ $(document).on('turbolinks:load', function() {
         $.ajax( {
             type: 'GET',
             url: '/users',
-            data: {name: input},
+            data: {name: input,
+            group_ids: groups_ids
+            },
             dataType: 'json',
             contentType: false
         })
@@ -54,8 +78,14 @@ $(document).on('turbolinks:load', function() {
         var name =$(this).data('user-name')
         $("#chat-group-users").append(deleteHTML(id,name))
         $(this).parent().remove();
+        groups_ids.push(id);
     })
     $("#chat-group-users").on('click','.user-search-remove',function() {
         $(this).parent().remove();
+        var id = $(this).data('user-id');
+        result = groups_ids.filter(function(value) {
+            return value != id
+        })
+        groups_ids = result;
     })
-});
+})
