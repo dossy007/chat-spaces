@@ -1,6 +1,27 @@
 $(document).on('turbolinks:load', function() {
     var groups_ids = []
     var user_list = $("#user-search-result")
+
+    // page推移したらdeletehtmlが構築されてgroups_idsにidが入る処理
+    $.ajax( {
+            type: 'GET',
+            url: '/users',
+            dataType: 'json',
+            contentType: false
+        })
+        .done(function(users) {
+             var data_html = $(".user-search-remove");
+             data_html.each(function(i,value) {
+                var u_id = value.dataset.userId;
+                console.log(u_id);
+                groups_ids.push(u_id);
+             })
+             console.log(groups_ids)
+            })
+        .fail(function(){
+        alert('通信失敗')
+        })
+
     function appendUsers(user) {
         var html = `<div class="chat-group-user clearfix">
                       <p class="chat-group-user__name">${user.name}</p>
@@ -68,26 +89,5 @@ $(document).on('turbolinks:load', function() {
             return value != id
         })
         groups_ids = result;
-    })
-
-    $(window).on('load',function(){//page推移したらdeletehtmlが構築されている処理を書く
-        $.ajax( {
-            type: 'GET',
-            url: '/users',
-            dataType: 'json',
-            contentType: false
-        })
-        .done(function(users) {
-             var data_html = $(".user-search-remove");
-             data_html.each(function(i,value) {
-                var u_id = value.dataset.userId;
-                console.log(u_id);
-                groups_ids.push(u_id);
-             })
-             console.log(groups_ids)
-            })
-        .fail(function(){
-        alert('通信失敗')
-        })
     })
 })
