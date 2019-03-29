@@ -43,8 +43,10 @@ $(document).on('turbolinks:load', function() {
 	$(function() {
 		var interval = setInterval(update,10000);
 	});
-		function update() { //update機能 自動更新
-			var message_id = $('ul:last').data('message_id');
+		function update() {
+			var message_id = $('location.href,ul:last').data('message_id');
+			console.log(location.href)
+			console.log(message_id)
 			if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 				$.ajax( {
 				url: location.href,
