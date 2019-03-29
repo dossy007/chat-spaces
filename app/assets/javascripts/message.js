@@ -40,13 +40,12 @@ $(document).on('turbolinks:load', function() {
 			alert('error')
 		})
 	})
+    //update機能 自動更新
 	$(function() {
 		var interval = setInterval(update,10000);
 	});
 		function update() {
 			var message_id = $('location.href,ul:last').data('message_id');
-			console.log(location.href)
-			console.log(message_id)
 			if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 				$.ajax( {
 				url: location.href,
@@ -61,8 +60,9 @@ $(document).on('turbolinks:load', function() {
 					var html = buildHTML(message);
 					$('.chat-main__body--message').append(html);
 				})
-			})
+			});
 			.fail(function(message) {
+				alert("非同期できてないにゃ")
 			});
 		    }
 		};
