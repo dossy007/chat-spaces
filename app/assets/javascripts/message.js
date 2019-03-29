@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
 	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`
 
 	var html = `
-    <ul data-message_id="${message.id}">
+    <ul data_box="${message.id}" data-message_id="${message.id}">
       <li class="chat-main__body--message-name">
         ${message.user_name}
       </li>
@@ -43,9 +43,9 @@ $(document).on('turbolinks:load', function() {
     //update機能 自動更新
 	$(function() {
 		var interval = setInterval(update,10000);
-	});
+	})
 		function update() {
-			var message_id = $('location.href,ul:last').data('message_id');
+			var message_id = $('.data_box:last').data('message_id');
 			if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 				$.ajax( {
 				url: location.href,
@@ -57,13 +57,13 @@ $(document).on('turbolinks:load', function() {
 			　　})
 			.done(function(data) {
 				data.forEach(function(message){
-					var html = buildHTML(message);
-					$('.chat-main__body--message').append(html);
+					var html = buildHTML(message)
+					$('.chat-main__body--message').append(html)
 				})
-			});
+			})
 			.fail(function(message) {
 				alert("非同期できてないにゃ")
-			});
+			})
 		    }
 		};
 });
