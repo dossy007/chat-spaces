@@ -59,10 +59,10 @@ $(document).on('turbolinks:load', function() {
 				data.forEach(function(message){
 					var html = buildHTML(message)
 					$('.chat-main__body--message').append(html)
+					$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
 				})
 			})
 			.fail(function(message) {
-				alert("非同期できてないにゃ")
 			})
 		    }
 		};
