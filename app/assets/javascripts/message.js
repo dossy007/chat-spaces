@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
 	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`
 
 	var html = `
-    <ul data_box="${message.id}" data-message_id="${message.id}">
+    <ul class = data_box data-message_id="${message.id}">
       <li class="chat-main__body--message-name">
         ${message.user_name}
       </li>
