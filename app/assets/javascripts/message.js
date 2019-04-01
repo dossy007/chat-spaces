@@ -1,9 +1,9 @@
 
 $(document).on('turbolinks:load', function() {
 	function buildHTML(message) {
-	var insert_content = message.image_url ? `<li class="chat-main__body--message-text"> ${message.text}
-	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`
-
+	var insert_content = message.image_url ? `<li class="chat-main__body--message-text">${message.text}<p><img src= "${message.image_url}"></p>`
+	: `<li class="chat-main__body--message-text">${message.text}`
+      // 上はtextのみ、下はimageあるとき
 	var html = `
     <ul class = data_box data-message_id="${message.id}">
       <li class="chat-main__body--message-name">
@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function() {
       <li class="chat-main__body--message-date">
         ${message.date}
       </li>
-	        ${insert_content}
+	    ${insert_content}
       </li>
     </ul>`
 		return html;
