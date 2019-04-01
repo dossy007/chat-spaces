@@ -1,10 +1,10 @@
 app_path = File.expand_path('../../../', __FILE__)
 rails_root = File.expand_path('../../', __FILE__)
 working_directory rails_root
-listen "#{rails_root}/shared/tmp/sockets/unicorn.sock"
-pid "#{rails_root}/shared/tmp/pids/unicorn.pid"
-stderr_path "#{rails_root}/shared/log/unicorn.stderr.log"
-stdout_path "#{rails_root}/shared/log/unicorn.stdout.log"
+listen "#{rails_root}/tmp/sockets/unicorn.sock"
+pid "#{rails_root}/tmp/pids/unicorn.pid"
+stderr_path "#{rails_root}/log/unicorn.stderr.log"
+stdout_path "#{rails_root}/log/unicorn.stdout.log"
 
 timeout 60
 
