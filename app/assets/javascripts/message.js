@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', function() {
 		})
 
 		.done(function(data) {
-			if(data.length == "undefiend") {
+			if(data.length == undefined) {
 			var html = buildHTML(data);
 			$('.chat-main__body--message').append(html);
 			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
