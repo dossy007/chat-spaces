@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function() {
     </ul>`
 		return html;
 	};
-
+    //非同期メッセージ送信
 	$('#new_message').on('submit',function(e) {
 		e.preventDefault();
 		var formData = new FormData(this);
