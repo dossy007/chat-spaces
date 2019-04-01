@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
 	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`
 
 	var html = `
-    <ul data-message_id="${message.id}">
+    <ul class = data_box data-message_id="${message.id}">
       <li class="chat-main__body--message-name">
         ${message.user_name}
       </li>
@@ -22,6 +22,7 @@ $(document).on('turbolinks:load', function() {
 		e.preventDefault();
 		var formData = new FormData(this);
 		var url = $(this).attr('action');
+		$(this)[0].reset();
 		$.ajax( {
 			url: url,
 			type: 'POST',
@@ -35,16 +36,18 @@ $(document).on('turbolinks:load', function() {
 			var html = buildHTML(data);
 			$('.chat-main__body--message').append(html);
 			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
+			$('#submit').prop("disabled",false);
 		})
 		.fail(function() {
 			alert('error')
 		})
 	})
+    //update機能 自動更新
 	$(function() {
 		var interval = setInterval(update,10000);
-	});
-		function update() { //update機能 自動更新
-			var message_id = $('ul:last').data('message_id');
+	})
+		function update() {
+			var message_id = $('.data_box:last').data('message_id');
 			if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 				$.ajax( {
 				url: location.href,
@@ -56,12 +59,13 @@ $(document).on('turbolinks:load', function() {
 			　　})
 			.done(function(data) {
 				data.forEach(function(message){
-					var html = buildHTML(message);
-					$('.chat-main__body--message').append(html);
+					var html = buildHTML(message)
+					$('.chat-main__body--message').append(html)
+					$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
 				})
 			})
 			.fail(function(message) {
-			});
+			})
 		    }
 		};
 });

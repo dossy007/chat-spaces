@@ -1,5 +1,5 @@
 - messages.each do |message|
-  %ul{"data-message_id": "#{message.id}"}
+  %ul.data_box{"data-message_id": "#{message.id}"}
     %li.chat-main__body--message-name
       = message.user.name
     %li.chat-main__body--message-date
