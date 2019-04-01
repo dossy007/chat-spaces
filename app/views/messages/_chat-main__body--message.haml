@@ -7,4 +7,4 @@
     %li.chat-main__body--message-text
       - if message.text.present?
         = message.text
-      = image_tag message.image.url, class: 'lower' if message.image.present?
+      %p= image_tag message.image.url, class: 'lower' if message.image.present?

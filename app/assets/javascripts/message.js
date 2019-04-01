@@ -1,9 +1,9 @@
 
 $(document).on('turbolinks:load', function() {
 	function buildHTML(message) {
-	var insert_content = message.image_url ? `<li class="chat-main__body--message-text"> ${message.text}
-	    <img src= "${message.image_url}">` : `<li class="chat-main__body--message-text">${message.text}`
-
+	var insert_content = message.image_url ? `<li class="chat-main__body--message-text">${message.text}<p><img src= "${message.image_url}"></p>`
+	: `<li class="chat-main__body--message-text">${message.text}`
+      // 上はtextのみ、下はimageあるとき
 	var html = `
     <ul class = data_box data-message_id="${message.id}">
       <li class="chat-main__body--message-name">
@@ -12,12 +12,12 @@ $(document).on('turbolinks:load', function() {
       <li class="chat-main__body--message-date">
         ${message.date}
       </li>
-	        ${insert_content}
+	    ${insert_content}
       </li>
     </ul>`
 		return html;
 	};
-
+    //非同期メッセージ送信
 	$('#new_message').on('submit',function(e) {
 		e.preventDefault();
 		var formData = new FormData(this);
@@ -33,10 +33,15 @@ $(document).on('turbolinks:load', function() {
 		})
 
 		.done(function(data) {
+			if(data.length == undefined) {
 			var html = buildHTML(data);
 			$('.chat-main__body--message').append(html);
 			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
 			$('#submit').prop("disabled",false);
+		    }else {
+		    	alert('メッセージを投稿してください')
+			$('#submit').prop("disabled",false);
+		    }
 		})
 		.fail(function() {
 			alert('error')
@@ -44,7 +49,7 @@ $(document).on('turbolinks:load', function() {
 	})
     //update機能 自動更新
 	$(function() {
-		var interval = setInterval(update,10000);
+		var interval = setInterval(update,5000);
 	})
 		function update() {
 			var message_id = $('.data_box:last').data('message_id');
