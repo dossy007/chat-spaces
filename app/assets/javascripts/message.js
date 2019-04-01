@@ -48,7 +48,7 @@ $(document).on('turbolinks:load', function() {
 	})
     //update機能 自動更新
 	$(function() {
-		var interval = setInterval(update,10000);
+		var interval = setInterval(update,5000);
 	})
 		function update() {
 			var message_id = $('.data_box:last').data('message_id');
