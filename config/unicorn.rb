@@ -50,6 +50,9 @@ listen "#{app_path}/tmp/sockets/unicorn.sock"
 stderr_path "#{app_path}/log/unicorn.stderr.log"
 stdout_path "#{app_path}/log/unicorn.stdout.log"
 
+
+ENV['BUNDLE_GEMFILE'] = app_path + "/Gemfile"
+
 timeout 60
 
 preload_app true
