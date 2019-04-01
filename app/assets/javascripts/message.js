@@ -39,6 +39,7 @@ $(document).on('turbolinks:load', function() {
 			$('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'swing')
 			$('#submit').prop("disabled",false);
 		    }else {
+		    	alert('メッセージを投稿してください')
 			$('#submit').prop("disabled",false);
 		    }
 		})
