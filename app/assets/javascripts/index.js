@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+    if(window.location.href.match(/groups/)) {
     var groups_ids = []
     var user_list = $("#user-search-result")
 
@@ -15,10 +16,11 @@ $(document).on('turbolinks:load', function() {
                 var u_id = value.dataset.userId;
                 groups_ids.push(u_id);
              })
-            })
+        })
         .fail(function(){
         alert('通信失敗')
         })
+    }
 
     function appendUsers(user) {
         var html = `<div class="chat-group-user clearfix">
