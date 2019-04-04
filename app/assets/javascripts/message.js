@@ -53,6 +53,9 @@ $(document).on('turbolinks:load', function() {
 	})
 		function update() {
 			var message_id = $('.data_box:last').data('message_id');
+			if (message_id === undefined){
+					message_id = 0;
+				}
 			if(window.location.href.match(/\/groups\/\d+\/messages/)) {
 				$.ajax( {
 				url: location.href,
