@@ -1,0 +1,30 @@
+=== unicorn 5.5.0.pre1 / 2018-12-20 20:11 UTC
+
+  Jeremy Evans contributed the "default_middleware" configuration option:
+
+    https://bogomips.org/unicorn-public/20180913192055.GD48926@jeremyevans.local/
+
+  Jeremy also contributed the ability to use separate groups for the process
+  and log files:
+
+    https://bogomips.org/unicorn-public/20180913192449.GE48926@jeremyevans.local/
+
+  There's also a couple of uninteresting minor optimizations and
+  documentation additions.
+
+  Eric Wong (10):
+        remove random seed reset atfork
+        use IO#wait instead of kgio_wait_readable
+        Merge branch '5.4-stable'
+        shrink pipes under Linux
+        socket_helper: add hint for FreeBSD users for accf_http(9)
+        tests: ensure -N/--no-default-middleware not supported in config.ru
+        doc: update more URLs to use HTTPS and avoid redirects
+        deduplicate strings VM-wide in Ruby 2.5+
+        doc/ISSUES: add links to git clone-able mail archives of our dependencies
+        README: minor updates and additional disclaimer
+
+  Jeremy Evans (2):
+        Make Worker#user support different process primary group and log file group
+        Support default_middleware configuration option
+
